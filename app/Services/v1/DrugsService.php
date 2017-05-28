@@ -3,6 +3,8 @@
 namespace App\Services\v1;
 
 use App\Drug;
+use App\Dci;
+use App\Category;
 use Illuminate\Support\Str;
 
 class DrugsService {
@@ -50,5 +52,17 @@ class DrugsService {
         }
 
         return $data;
+    }
+
+    public function createDrug($req) {
+        $drug = new Drug();
+
+        $drug->name = $req->input('name');
+        $drug->dci_id = $req->input('dci_id');
+        $drug->category_id = $req->input('category_id');
+
+        $drug->save();
+
+        return $this->filterDrugs([$drug]);
     }
 }
