@@ -20,7 +20,8 @@ class DrugsController extends Controller
      */
     public function index()
     {
-        $data = $this->drugs->getDrugs();
+        $parameters = request()->input();
+        $data = $this->drugs->getDrugs($parameters);
         return response()->json($data);
     }
 
@@ -53,7 +54,8 @@ class DrugsController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = $this->drugs->getDrug($id);
+        return response()->json($data);
     }
 
     /**

@@ -15,10 +15,10 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->delete();
 
         $users = array(
-            ['id' => '1', 'name' => 'laurent', 'email' => 'laurent.toson@mines-ales.org', 'password' => bcrypt('infrescue')],
-            ['id' => '2', 'name' => 'scott', 'email' => 'scott.rayapoulle@mines-ales.org', 'password' => bcrypt('infrescue')],
-            ['id' => '3', 'name' => 'raphael', 'email' => 'raphael.haltz@mines-ales.org', 'password' => bcrypt('infrescue')],
-            ['id' => '4', 'name' => 'admin', 'email' => 'laurentt96@outlook.fr', 'password' => bcrypt('infrescue')]
+            ['id' => '1', 'name' => 'laurent', 'email' => 'laurent.toson@mines-ales.org', 'password' => bcrypt('infrescue'), 'created_at' => new DateTime(), 'updated_at' => new DateTime()],
+            ['id' => '2', 'name' => 'scott', 'email' => 'scott.rayapoulle@mines-ales.org', 'password' => bcrypt('infrescue'), 'created_at' => new DateTime(), 'updated_at' => new DateTime()],
+            ['id' => '3', 'name' => 'raphael', 'email' => 'raphael.haltz@mines-ales.org', 'password' => bcrypt('infrescue'), 'created_at' => new DateTime(), 'updated_at' => new DateTime()],
+            ['id' => '4', 'name' => 'admin', 'email' => 'laurentt96@outlook.fr', 'password' => bcrypt('infrescue'), 'created_at' => new DateTime(), 'updated_at' => new DateTime()]
         );
 
         // Uncomment the below to run the seeder

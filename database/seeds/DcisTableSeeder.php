@@ -15,9 +15,9 @@ class DcisTableSeeder extends Seeder
         DB::table('dcis')->delete();
 
         $dcis = array(
-            ['id' => '1', 'name' => 'ADRENALINE'],
-            ['id' => '2', 'name' => 'LYSINE ACETYLSALICYLATE'],
-            ['id' => '3', 'name' => 'ATROPINE']
+            ['id' => '1', 'name' => 'ADRENALINE', 'created_at' => new DateTime(), 'updated_at' => new DateTime()],
+            ['id' => '2', 'name' => 'LYSINE ACETYLSALICYLATE', 'created_at' => new DateTime(), 'updated_at' => new DateTime()],
+            ['id' => '3', 'name' => 'ATROPINE', 'created_at' => new DateTime(), 'updated_at' => new DateTime()]
         );
 
         // Uncomment the below to run the seeder

@@ -15,8 +15,8 @@ class CategoriesTableSeeder extends Seeder
         DB::table('categories')->delete();
 
         $categories = array(
-            ['id' => '1', 'name' => 'Electrolyes'],
-            ['id' => '2', 'name' => 'Anti pyrétique']
+            ['id' => '1', 'name' => 'Electrolyes', 'created_at' => new DateTime(), 'updated_at' => new DateTime()],
+            ['id' => '2', 'name' => 'Anti pyrétique', 'created_at' => new DateTime(), 'updated_at' => new DateTime()]
         );
 
         // Uncomment the below to run the seeder

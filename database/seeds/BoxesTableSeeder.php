@@ -15,8 +15,8 @@ class BoxesTableSeeder extends Seeder
         DB::table('boxes')->delete();
 
         $boxes = array(
-            ['id' => '1', 'name' => 'DIV1 cardio hemato', 'number' => 410],
-            ['id' => '2', 'name' => 'ATB PO', 'number' => 411]
+            ['id' => '1', 'name' => 'DIV1 cardio hemato', 'number' => 410, 'created_at' => new DateTime(), 'updated_at' => new DateTime()],
+            ['id' => '2', 'name' => 'ATB PO', 'number' => 411, 'created_at' => new DateTime(), 'updated_at' => new DateTime()]
         );
 
         // Uncomment the below to run the seeder

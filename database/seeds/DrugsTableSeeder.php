@@ -15,9 +15,9 @@ class DrugsTableSeeder extends Seeder
         DB::table('drugs')->delete();
 
         $drugs = array(
-            ['id' => '1', 'name' => 'ADRENALINE', 'dci_id' => 1, 'category_id' => 1],
-            ['id' => '2', 'name' => 'ASPEGIC', 'dci_id' => 2, 'category_id' => 2],
-            ['id' => '3', 'name' => 'ATROPINE', 'dci_id' => 3, 'category_id' => 1]
+            ['id' => '1', 'name' => 'ADRENALINE', 'dci_id' => 1, 'category_id' => 1, 'created_at' => new DateTime(), 'updated_at' => new DateTime()],
+            ['id' => '2', 'name' => 'ASPEGIC', 'dci_id' => 2, 'category_id' => 2, 'created_at' => new DateTime(), 'updated_at' => new DateTime()],
+            ['id' => '3', 'name' => 'ATROPINE', 'dci_id' => 3, 'category_id' => 1, 'created_at' => new DateTime(), 'updated_at' => new DateTime()]
         );
 
         // Uncomment the below to run the seeder
