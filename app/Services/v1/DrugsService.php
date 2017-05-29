@@ -30,10 +30,6 @@ class DrugsService {
         }
     }
 
-    public function getDrug($drugId) {
-        return $this->filterDrugs(Drug::where('id', $drugId)->get());
-    }
-
     protected function filterDrugs($drugs) {
         $data = [];
 
@@ -54,6 +50,10 @@ class DrugsService {
         return $data;
     }
 
+    public function getDrug($drugId) {
+        return $this->filterDrugs(Drug::where('id', $drugId)->get());
+    }
+
     public function createDrug($req) {
         $drug = new Drug();
 
@@ -64,5 +64,30 @@ class DrugsService {
         $drug->save();
 
         return $this->filterDrugs([$drug]);
+    }
+
+    public function updateDrug($req, $id) {
+        $drug = Drug::where('id', $id)->firstOrFail();
+
+        if ($req->input('name') != null) {
+            $drug->name = $req->input('name');
+        }
+
+        if ($req->input('dci_id') != null) {
+            $drug->dci_id = $req->input('dci_id');
+        }
+
+        if ($req->input('category_id') != null) {
+            $drug->category_id = $req->input('category_id');
+        }
+
+        $drug->save();
+
+        return $this->filterDrugs([$drug]);
+    }
+
+    public function deleteDrug($id) {
+        $drug = Drug::where('id', $id)->firstOrFail();
+        $drug->delete();
     }
 }
