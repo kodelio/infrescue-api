@@ -4,24 +4,24 @@
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="{{ asset('/homepage/images/favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ asset('/homepage/images/favicon.ico', env('REDIRECT_HTTPS')) }}">
     <title>InfRescue</title>
     <meta name="description" content="Application InfRescue (Projet GL INFRES 9)">
-    <link rel="apple-touch-icon" href="{{ asset('/homepage/images/touch/apple-touch-icon.png') }}">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('/homepage/images/touch/apple-touch-icon-72x72.png') }}">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('/homepage/images/touch/apple-touch-icon-114x114.png') }}">
-    <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('/homepage/images/touch/apple-touch-icon-144x144.png') }}">
-    <link rel="stylesheet" href="{{ asset('/homepage/css/style.css') }}">
+    <link rel="apple-touch-icon" href="{{ asset('/homepage/images/touch/apple-touch-icon.png', env('REDIRECT_HTTPS')) }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('/homepage/images/touch/apple-touch-icon-72x72.png', env('REDIRECT_HTTPS')) }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('/homepage/images/touch/apple-touch-icon-114x114.png', env('REDIRECT_HTTPS')) }}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('/homepage/images/touch/apple-touch-icon-144x144.png', env('REDIRECT_HTTPS')) }}">
+    <link rel="stylesheet" href="{{ asset('/homepage/css/style.css', env('REDIRECT_HTTPS')) }}">
     <!--[if lt IE 9]>
-    <script src="{{ asset('/homepage/js/html5.js') }}"></script>
-    <script src="{{ asset('/homepage/js/respond.js') }}"></script>
+    <script src="{{ asset('/homepage/js/html5.js', env('REDIRECT_HTTPS')) }}"></script>
+    <script src="{{ asset('/homepage/js/respond.js', env('REDIRECT_HTTPS')) }}"></script>
     <![endif]-->
 </head>
 <body class="no-js">
 <div class="main">
     <header>
         <div class="wrap">
-            <img src="{{ asset('/homepage/upload/iphone.png') }}" height="532" width="252" alt="" class="header-img">
+            <img src="{{ asset('/homepage/upload/iphone.png', env('REDIRECT_HTTPS')) }}" height="532" width="252" alt="" class="header-img">
             <div class="header-wrapper">
                 <h1 style="color: black;"><span>Inf</span>Rescue</h1>
                 <p style="color: black; font-size: 28px;    ">Gestion d'hopitaux de campagne</p>
@@ -55,7 +55,7 @@
                     <h1>Projet GL INFRES 9</h1>
                     <br />
                     <p>Projet réalisé pour le module Projet GL de la formation INFRES (Ecole des Mines d'Alès)
-                    <img src="{{ asset('/homepage/images/infrescue.png') }}" style="width: 45%;"/>
+                    <img src="{{ asset('/homepage/images/infrescue.png', env('REDIRECT_HTTPS')) }}" style="width: 45%;"/>
                     </p>
                 </div>
             </div>
@@ -72,9 +72,9 @@
     </div>
     <!-- /.wrap -->
 </footer>
-<script src="{{ asset('/homepage/js/jquery.js') }}"></script>
-<script src="{{ asset('/homepage/js/library.js') }}"></script>
-<script src="{{ asset('/homepage/js/script.js') }}"></script>
-<script src="{{ asset('/homepage/js/retina.js') }}"></script>
+<script src="{{ asset('/homepage/js/jquery.js', env('REDIRECT_HTTPS')) }}"></script>
+<script src="{{ asset('/homepage/js/library.js', env('REDIRECT_HTTPS')) }}"></script>
+<script src="{{ asset('/homepage/js/script.js', env('REDIRECT_HTTPS')) }}"></script>
+<script src="{{ asset('/homepage/js/retina.js', env('REDIRECT_HTTPS')) }}"></script>
 </body>
 </html>
