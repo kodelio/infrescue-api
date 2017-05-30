@@ -13,6 +13,7 @@ class DrugsController extends Controller
     public function __construct(DrugsService $service)
     {
         $this->drugs = $service;
+        $this->middleware('auth:api', ['only' => ['store', 'update', 'destroy']]);
     }
 
     /**
