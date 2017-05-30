@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
     {
         if(env('REDIRECT_HTTPS'))
         {
-            \URL::forceSchema('https');
+            \URL::forceScheme('https');
         }
     }
 
