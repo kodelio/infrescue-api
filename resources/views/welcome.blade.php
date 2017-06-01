@@ -7,10 +7,6 @@
     <link rel="shortcut icon" href="{{ asset('/homepage/images/favicon.ico', env('REDIRECT_HTTPS')) }}">
     <title>InfRescue</title>
     <meta name="description" content="Application InfRescue (Projet GL INFRES 9)">
-    <link rel="apple-touch-icon" href="{{ asset('/homepage/images/touch/apple-touch-icon.png', env('REDIRECT_HTTPS')) }}">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('/homepage/images/touch/apple-touch-icon-72x72.png', env('REDIRECT_HTTPS')) }}">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('/homepage/images/touch/apple-touch-icon-114x114.png', env('REDIRECT_HTTPS')) }}">
-    <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('/homepage/images/touch/apple-touch-icon-144x144.png', env('REDIRECT_HTTPS')) }}">
     <link rel="stylesheet" href="{{ asset('/homepage/css/style.css', env('REDIRECT_HTTPS')) }}">
     <!--[if lt IE 9]>
     <script src="{{ asset('/homepage/js/html5.js', env('REDIRECT_HTTPS')) }}"></script>
@@ -29,8 +25,10 @@
                     <a href="#" class="button" target="_blank">Télécharger l'application</a>
                     <a style="color: black;" href="http://sonar.infrescue.cf" class="button button-stripe" target="_blank">SonarQube</a>
                     @if (Auth::guest())
+                        <br />
                         <a style="margin-top: 15px; background: #2ecc71; border: 2px solid white;" href="{{ route('login') }}" class="button">Se connecter</a>
                     @else
+                        <br />
                         <a style="margin-top: 15px; background: #e74c3c; border: 2px solid white;" class="button" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">

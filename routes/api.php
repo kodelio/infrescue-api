@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use v1\DrugsController;
+use v1\BoxesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,7 @@ Route::resource('/v1/drugs', DrugsController::class, [
     'except' => ['create', 'edit']
 ]);
 // api/v1/drugs
+
+Route::resource('/v1/boxes', BoxesController::class, [
+    'except' => ['create', 'edit']
+]);

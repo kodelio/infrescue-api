@@ -177,7 +177,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        App\Providers\v1\DrugServiceProvider::class
+        App\Providers\v1\DrugServiceProvider::class,
+        App\Providers\v1\BoxServiceProvider::class
 
     ],
 

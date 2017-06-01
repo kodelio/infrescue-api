@@ -57,6 +57,7 @@ class DrugsService {
     public function createDrug($req) {
         $drug = new Drug();
 
+        // TODO check if dci and category exists
         $drug->name = $req->input('name');
         $drug->dci_id = $req->input('dci_id');
         $drug->category_id = $req->input('category_id');
@@ -69,6 +70,7 @@ class DrugsService {
     public function updateDrug($req, $id) {
         $drug = Drug::where('id', $id)->firstOrFail();
 
+        // TODO check if dci and category exists
         if ($req->input('name') != null) {
             $drug->name = $req->input('name');
         }
