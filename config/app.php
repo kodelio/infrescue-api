@@ -178,7 +178,9 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         App\Providers\v1\DrugServiceProvider::class,
-        App\Providers\v1\BoxServiceProvider::class
+        App\Providers\v1\BoxServiceProvider::class,
+        App\Providers\v1\DciServiceProvider::class,
+        App\Providers\v1\CategoryServiceProvider::class
 
     ],
 
