@@ -42,3 +42,23 @@ Route::resource('/v1/categories', CategoriesController::class, [
 Route::resource('/v1/batches', BatchesController::class, [
     'except' => ['create', 'edit']
 ]);
+
+Route::get('/v1/boxes/{box}/batches', function ($boxId) {
+    $data = App\Box::where('id', $boxId)->first();
+    return response()->json($data->batches);
+});
+
+Route::get('/v1/drugs/{drug}/batches', function ($drugId) {
+    $data = App\Drug::where('id', $drugId)->first();
+    return response()->json($data->batches);
+});
+
+Route::get('/v1/dcis/{dci}/drugs', function ($dciId) {
+    $data = App\Dci::where('id', $dciId)->first();
+    return response()->json($data->drugs);
+});
+
+Route::get('/v1/categories/{category}/drugs', function ($categoryId) {
+    $data = App\Category::where('id', $categoryId)->first();
+    return response()->json($data->drugs);
+});
