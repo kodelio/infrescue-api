@@ -5,6 +5,7 @@ use v1\DrugsController;
 use v1\BoxesController;
 use v1\DcisController;
 use v1\CategoriesController;
+use v1\BatchesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,5 +36,9 @@ Route::resource('/v1/dcis', DcisController::class, [
 ]);
 
 Route::resource('/v1/categories', CategoriesController::class, [
+    'except' => ['create', 'edit']
+]);
+
+Route::resource('/v1/batches', BatchesController::class, [
     'except' => ['create', 'edit']
 ]);

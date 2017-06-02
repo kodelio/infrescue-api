@@ -23,9 +23,7 @@ class BoxesService {
                 return $boxesSearch;
             }
         }
-        else {
-            return $this->filterBoxes(Box::all());
-        }
+        return $this->filterBoxes(Box::all());
     }
 
     protected function filterBoxes($boxes) {

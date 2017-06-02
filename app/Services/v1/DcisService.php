@@ -23,9 +23,7 @@ class DcisService {
                 return $dcisSearch;
             }
         }
-        else {
-            return $this->filterDcis(Dci::all());
-        }
+        return $this->filterDcis(Dci::all());
     }
 
     protected function filterDcis($dcis) {

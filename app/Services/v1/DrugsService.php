@@ -25,9 +25,7 @@ class DrugsService {
                 return $drugsSearch;
             }
         }
-        else {
-            return $this->filterDrugs(Drug::all());
-        }
+        return $this->filterDrugs(Drug::all());
     }
 
     protected function filterDrugs($drugs) {

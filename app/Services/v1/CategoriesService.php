@@ -23,9 +23,7 @@ class CategoriesService {
                 return $categoriesSearch;
             }
         }
-        else {
-            return $this->filterCategories(Category::all());
-        }
+        return $this->filterCategories(Category::all());
     }
 
     protected function filterCategories($categories) {
