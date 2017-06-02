@@ -24,6 +24,7 @@ class BatchesService {
                 'drug' => $batch->drug->where('id', $batch->drug_id)->get(),
                 'box' => $batch->box->where('id', $batch->box_id)->get(),
                 'quantity' => $batch->quantity,
+                'dotationU7' => $batch->dotationU7,
                 'created_at' => $batch->created_at->format('Y-m-d H:i:s'),
                 'updated_at' => $batch->updated_at->format('Y-m-d H:i:s'),
                 'href' => route('batches.show', ['id' => $batch->id])
@@ -48,6 +49,7 @@ class BatchesService {
         $batch->drug_id = $req->input('drug_id');
         $batch->box_id = $req->input('box_id');
         $batch->quantity = $req->input('quantity');
+        $batch->dotationU7 = $req->input('dotationU7');
 
         $batch->save();
 
@@ -76,6 +78,10 @@ class BatchesService {
 
         if ($req->input('quantity') != null) {
             $batch->quantity = $req->input('quantity');
+        }
+
+        if ($req->input('dotationU7') != null) {
+            $batch->dotationU7 = $req->input('dotationU7');
         }
 
         $batch->save();
