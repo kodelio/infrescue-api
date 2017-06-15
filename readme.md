@@ -9,3 +9,4 @@ Documentation :
 - [Dcis API](https://gitlab.com/InfRescue/Api/wikis/dcis-api)
 - [Categories API](https://gitlab.com/InfRescue/Api/wikis/categories-api)
 - [Batches API](https://gitlab.com/InfRescue/Api/wikis/batches-api)
+- [Users API](https://gitlab.com/InfRescue/Api/wikis/users-api)
