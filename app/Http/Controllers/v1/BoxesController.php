@@ -25,7 +25,7 @@ class BoxesController extends Controller
     {
         $parameters = request()->input();
         $data = $this->boxes->getBoxes($parameters);
-        return response()->json($data);
+        return response()->json($data, 200);
     }
 
     /**

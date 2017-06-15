@@ -45,20 +45,35 @@ Route::resource('/v1/batches', BatchesController::class, [
 
 Route::get('/v1/boxes/{box}/batches', function ($boxId) {
     $data = App\Box::where('id', $boxId)->first();
-    return response()->json($data->batches);
+    return response()->json($data->batches, 200);
 });
 
 Route::get('/v1/drugs/{drug}/batches', function ($drugId) {
     $data = App\Drug::where('id', $drugId)->first();
-    return response()->json($data->batches);
+    return response()->json($data->batches, 200);
 });
 
 Route::get('/v1/dcis/{dci}/drugs', function ($dciId) {
     $data = App\Dci::where('id', $dciId)->first();
-    return response()->json($data->drugs);
+    return response()->json($data->drugs, 200);
 });
 
 Route::get('/v1/categories/{category}/drugs', function ($categoryId) {
     $data = App\Category::where('id', $categoryId)->first();
-    return response()->json($data->drugs);
+    return response()->json($data->drugs, 200);
+});
+
+Route::post('/v1/users/login', function () {
+    try {
+        $data = App\User::where('email', request()->input('email'))->firstOrFail();
+        if (Hash::check(request()->input('password'), $data['password'])) {
+            return response()->json($data, 201);
+        }
+        else {
+            return response()->json(['message' => 'Wrong password'], 401);
+        }
+    }
+    catch (Exception $e) {
+        return response()->json(['message' => $e->getMessage()], 500);
+    }
 });

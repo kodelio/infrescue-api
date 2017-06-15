@@ -24,7 +24,7 @@ class BatchesController extends Controller
     public function index()
     {
         $data = $this->batches->getBatches();
-        return response()->json($data);
+        return response()->json($data, 200);
     }
 
     /**

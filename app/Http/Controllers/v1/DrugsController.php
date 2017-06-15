@@ -25,7 +25,7 @@ class DrugsController extends Controller
     {
         $parameters = request()->input();
         $data = $this->drugs->getDrugs($parameters);
-        return response()->json($data);
+        return response()->json($data, 200);
     }
 
     /**

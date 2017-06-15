@@ -54,7 +54,7 @@ class CategoriesController extends Controller
     public function show($id)
     {
         $data = $this->categories->getCategory($id);
-        return response()->json($data);
+        return response()->json($data, 200);
     }
 
     /**

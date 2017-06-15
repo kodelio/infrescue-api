@@ -54,7 +54,7 @@ class DcisController extends Controller
     public function show($id)
     {
         $data = $this->dcis->getDci($id);
-        return response()->json($data);
+        return response()->json($data, 200);
     }
 
     /**
