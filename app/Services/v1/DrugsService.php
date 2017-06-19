@@ -35,8 +35,8 @@ class DrugsService {
             $entry = [
                 'id' => $drug->id,
                 'name' => $drug->name,
-                'dci' => $drug->dci->where('id', $drug->dci_id)->get(),
-                'category' => $drug->category->where('id', $drug->category_id)->get(),
+                'dci' => $drug->dci->where('id', $drug->dci_id)->first(),
+                'category' => $drug->category->where('id', $drug->category_id)->first(),
                 'created_at' => $drug->created_at->format('Y-m-d H:i:s'),
                 'updated_at' => $drug->updated_at->format('Y-m-d H:i:s'),
                 'href' => route('drugs.show', ['id' => $drug->id])
