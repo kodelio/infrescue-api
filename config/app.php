@@ -181,7 +181,9 @@ return [
         App\Providers\v1\BoxServiceProvider::class,
         App\Providers\v1\DciServiceProvider::class,
         App\Providers\v1\CategoryServiceProvider::class,
-        App\Providers\v1\BatchServiceProvider::class
+        App\Providers\v1\BatchServiceProvider::class,
+
+        Sentry\SentryLaravel\SentryLaravelServiceProvider::class,
 
     ],
 
@@ -231,6 +233,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        'Sentry' => Sentry\SentryLaravel\SentryFacade::class,
 
     ],
 
