@@ -6,6 +6,7 @@ use v1\BoxesController;
 use v1\DcisController;
 use v1\CategoriesController;
 use v1\BatchesController;
+use v1\OrdersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,10 @@ Route::resource('/v1/categories', CategoriesController::class, [
 
 Route::resource('/v1/batches', BatchesController::class, [
     'except' => ['create', 'edit']
+]);
+
+Route::resource('/v1/orders', OrdersController::class, [
+    'except' => ['create', 'edit', 'update', 'destroy']
 ]);
 
 Route::get('/v1/boxes/{box}/batches', function ($boxId) {

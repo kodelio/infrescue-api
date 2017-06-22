@@ -13,4 +13,8 @@ class Batch extends Model
     public function box() {
         return $this->belongsTo('App\Box');
     }
+
+    public function orders() {
+        return $this->hasMany('App\Order');
+    }
 }

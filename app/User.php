@@ -34,4 +34,8 @@ class User extends Authenticatable
 
         return parent::save($options);
     }
+
+    public function orders() {
+        return $this->hasMany('App\Order');
+    }
 }

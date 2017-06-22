@@ -10,3 +10,4 @@ Documentation :
 - [Categories API](https://gitlab.com/InfRescue/Api/wikis/categories-api)
 - [Batches API](https://gitlab.com/InfRescue/Api/wikis/batches-api)
 - [Users API](https://gitlab.com/InfRescue/Api/wikis/users-api)
+- [Orders API](https://gitlab.com/InfRescue/Api/wikis/orders-api)
