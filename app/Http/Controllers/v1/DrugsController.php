@@ -87,7 +87,7 @@ class DrugsController extends Controller
     public function destroy($id)
     {
         try {
-            $drug = $this->drugs->deleteDrug($id);
+            $this->drugs->deleteDrug($id);
             return response()->make('', 204);
         }
         catch (ModelNotFoundException $ex) {

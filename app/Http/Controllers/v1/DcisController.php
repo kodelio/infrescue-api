@@ -87,7 +87,7 @@ class DcisController extends Controller
     public function destroy($id)
     {
         try {
-            $dci = $this->dcis->deleteDci($id);
+            $this->dcis->deleteDci($id);
             return response()->make('', 204);
         }
         catch (ModelNotFoundException $ex) {

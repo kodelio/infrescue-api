@@ -26,7 +26,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::resource('/v1/drugs', DrugsController::class, [
     'except' => ['create', 'edit']
 ]);
-// api/v1/drugs
 
 Route::resource('/v1/boxes', BoxesController::class, [
     'except' => ['create', 'edit']

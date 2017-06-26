@@ -87,7 +87,7 @@ class BoxesController extends Controller
     public function destroy($id)
     {
         try {
-            $box = $this->boxes->deleteBox($id);
+            $this->boxes->deleteBox($id);
             return response()->make('', 204);
         }
         catch (ModelNotFoundException $ex) {

@@ -87,7 +87,7 @@ class CategoriesController extends Controller
     public function destroy($id)
     {
         try {
-            $category = $this->categories->deleteCategory($id);
+            $this->categories->deleteCategory($id);
             return response()->make('', 204);
         }
         catch (ModelNotFoundException $ex) {
