@@ -23,6 +23,7 @@ class BatchesService {
                 'DLU' => $batch->DLU,
                 'drug' => $batch->drug->where('id', $batch->drug_id)->first(),
                 'box' => $batch->box->where('id', $batch->box_id)->first(),
+                'orders' => $batch->orders,
                 'quantity' => $batch->quantity,
                 'dotationU7' => $batch->dotationU7,
                 'created_at' => $batch->created_at->format('Y-m-d H:i:s'),

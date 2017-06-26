@@ -33,6 +33,7 @@ class CategoriesService {
             $entry = [
                 'id' => $category->id,
                 'name' => $category->name,
+                'drugs' => $category->drugs,
                 'created_at' => $category->created_at->format('Y-m-d H:i:s'),
                 'updated_at' => $category->updated_at->format('Y-m-d H:i:s'),
                 'href' => route('categories.show', ['id' => $category->id])

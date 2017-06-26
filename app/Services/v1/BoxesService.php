@@ -34,6 +34,7 @@ class BoxesService {
                 'id' => $box->id,
                 'name' => $box->name,
                 'number' => $box->number,
+                'batches' => $box->batches,
                 'created_at' => $box->created_at->format('Y-m-d H:i:s'),
                 'updated_at' => $box->updated_at->format('Y-m-d H:i:s'),
                 'href' => route('boxes.show', ['id' => $box->id])

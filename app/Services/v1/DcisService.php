@@ -33,6 +33,7 @@ class DcisService {
             $entry = [
                 'id' => $dci->id,
                 'name' => $dci->name,
+                'drugs' => $dci->drugs,
                 'created_at' => $dci->created_at->format('Y-m-d H:i:s'),
                 'updated_at' => $dci->updated_at->format('Y-m-d H:i:s'),
                 'href' => route('dcis.show', ['id' => $dci->id])
