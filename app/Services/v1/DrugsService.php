@@ -35,6 +35,8 @@ class DrugsService {
             $entry = [
                 'id' => $drug->id,
                 'name' => $drug->name,
+                'dci_id' => $drug->dci_id,
+                'category_id' => $drug->category_id,
                 'dci' => $drug->dci->where('id', $drug->dci_id)->first(),
                 'category' => $drug->category->where('id', $drug->category_id)->first(),
                 'created_at' => $drug->created_at->format('Y-m-d H:i:s'),
