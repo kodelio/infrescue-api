@@ -21,7 +21,7 @@ class OrdersService {
                 'quantity' => $order->quantity,
                 'batch' => $order->batch->where('id', $order->batch_id)->first(),
                 'user' => $order->user->where('id', $order->user_id)->first(),
-                'newbatch' => $order->newbatch,
+                'newbatch' => Batch::where('id', '=', $order->newbatch)->first(),
                 'created_at' => $order->created_at->format('Y-m-d H:i:s'),
                 'updated_at' => $order->updated_at->format('Y-m-d H:i:s'),
                 'href' => route('orders.show', ['id' => $order->id])
