@@ -21,6 +21,7 @@ class OrdersService {
                 'quantity' => $order->quantity,
                 'batch' => $order->batch->where('id', $order->batch_id)->first(),
                 'user' => $order->user->where('id', $order->user_id)->first(),
+                'newbatch' => $order->newbatch,
                 'created_at' => $order->created_at->format('Y-m-d H:i:s'),
                 'updated_at' => $order->updated_at->format('Y-m-d H:i:s'),
                 'href' => route('orders.show', ['id' => $order->id])
@@ -39,12 +40,9 @@ class OrdersService {
     public function createOrder($req) {
         $order = new Order();
 
-        // TODO check if batch and user exists
         $order->quantity = $req->input('quantity');
         $order->batch_id = $req->input('batch_id');
         $order->user_id = $req->input('user_id');
-
-        $order->save();
 
         $batch = new Batch();
 
@@ -57,6 +55,10 @@ class OrdersService {
         $batch->dotationU7 = $order->batch->dotationU7;
 
         $batch->save();
+
+        $order->newbatch = $batch->id;
+
+        $order->save();
 
         return $this->filterOrders([$order]);
     }

@@ -44,7 +44,6 @@ class BatchesService {
     public function createBatch($req) {
         $batch = new Batch();
 
-        // TODO check if drug and box exists
         $batch->dosage = $req->input('dosage');
         $batch->DLU = $req->input('DLU');
         $batch->drug_id = $req->input('drug_id');
@@ -60,7 +59,6 @@ class BatchesService {
     public function updateBatch($req, $id) {
         $batch = Batch::where('id', $id)->firstOrFail();
 
-        // TODO check if drug and box exists
         if ($req->input('dosage') != null) {
             $batch->dosage = $req->input('dosage');
         }

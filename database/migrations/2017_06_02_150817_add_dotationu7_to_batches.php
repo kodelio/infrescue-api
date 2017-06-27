@@ -25,8 +25,6 @@ class AddDotationu7ToBatches extends Migration
      */
     public function down()
     {
-        Schema::table('batches', function (Blueprint $table) {
-            //
-        });
+
     }
 }

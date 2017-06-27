@@ -24,7 +24,7 @@ class OrderServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(OrdersService::class, function($app) {
+        $this->app->bind(OrdersService::class, function() {
             return new OrdersService();
         });
     }

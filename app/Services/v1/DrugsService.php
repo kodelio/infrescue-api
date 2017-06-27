@@ -10,20 +10,17 @@ use Illuminate\Support\Str;
 class DrugsService {
 
     public function getDrugs($parameters) {
-        if (isset($parameters) && !empty($parameters)) {
-            if (isset($parameters['name'])) {
+        if (isset($parameters) && !empty($parameters) && isset($parameters['name'])) {
+            $drugs = Drug::all();
+            $drugsSearch = new \Illuminate\Database\Eloquent\Collection();
 
-                $drugs = Drug::all();
-                $drugsSearch = new \Illuminate\Database\Eloquent\Collection();
-
-                foreach($drugs as $drug)
-                {
-                    if(Str::contains(Str::lower($drug->name), Str::lower($parameters['name']))) {
-                        $drugsSearch->add($drug);
-                    }
+            foreach($drugs as $drug)
+            {
+                if(Str::contains(Str::lower($drug->name), Str::lower($parameters['name']))) {
+                    $drugsSearch->add($drug);
                 }
-                return $drugsSearch;
             }
+            return $drugsSearch;
         }
         return $this->filterDrugs(Drug::all());
     }
@@ -57,7 +54,6 @@ class DrugsService {
     public function createDrug($req) {
         $drug = new Drug();
 
-        // TODO check if dci and category exists
         $drug->name = $req->input('name');
         $drug->dci_id = $req->input('dci_id');
         $drug->category_id = $req->input('category_id');
@@ -71,7 +67,6 @@ class DrugsService {
     public function updateDrug($req, $id) {
         $drug = Drug::where('id', $id)->firstOrFail();
 
-        // TODO check if dci and category exists
         if ($req->input('name') != null) {
             $drug->name = $req->input('name');
         }

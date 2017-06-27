@@ -24,7 +24,7 @@ class BoxServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(BoxesService::class, function($app) {
+        $this->app->bind(BoxesService::class, function() {
             return new BoxesService();
         });
     }

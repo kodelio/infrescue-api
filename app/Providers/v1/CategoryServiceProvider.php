@@ -24,7 +24,7 @@ class CategoryServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(CategoriesService::class, function($app) {
+        $this->app->bind(CategoriesService::class, function() {
             return new CategoriesService();
         });
     }

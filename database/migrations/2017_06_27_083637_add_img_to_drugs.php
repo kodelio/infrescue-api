@@ -25,8 +25,6 @@ class AddImgToDrugs extends Migration
      */
     public function down()
     {
-        Schema::table('drugs', function (Blueprint $table) {
-            //
-        });
+
     }
 }

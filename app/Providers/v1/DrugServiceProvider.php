@@ -24,7 +24,7 @@ class DrugServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(DrugsService::class, function($app) {
+        $this->app->bind(DrugsService::class, function() {
             return new DrugsService();
         });
     }

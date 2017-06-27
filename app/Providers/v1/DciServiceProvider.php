@@ -24,7 +24,7 @@ class DciServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(DcisService::class, function($app) {
+        $this->app->bind(DcisService::class, function() {
             return new DcisService();
         });
     }

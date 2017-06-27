@@ -8,20 +8,17 @@ use Illuminate\Support\Str;
 class BoxesService {
 
     public function getBoxes($parameters) {
-        if (isset($parameters) && !empty($parameters)) {
-            if (isset($parameters['name'])) {
+        if (isset($parameters) && !empty($parameters) && isset($parameters['name'])) {
+            $boxes = Box::all();
+            $boxesSearch = new \Illuminate\Database\Eloquent\Collection();
 
-                $boxes = Box::all();
-                $boxesSearch = new \Illuminate\Database\Eloquent\Collection();
-
-                foreach($boxes as $box)
-                {
-                    if(Str::contains(Str::lower($box->name), Str::lower($parameters['name'])) || Str::contains(Str::lower($box->number), Str::lower($parameters['name']))) {
-                        $boxesSearch->add($box);
-                    }
+            foreach($boxes as $box)
+            {
+                if(Str::contains(Str::lower($box->name), Str::lower($parameters['name'])) || Str::contains(Str::lower($box->number), Str::lower($parameters['name']))) {
+                    $boxesSearch->add($box);
                 }
-                return $boxesSearch;
             }
+            return $boxesSearch;
         }
         return $this->filterBoxes(Box::all());
     }
@@ -43,6 +40,10 @@ class BoxesService {
 
             for ($i = 0; $i < sizeof($entry['batches']); $i++) {
                 $entry['batches'][$i]['drug'] = $entry['batches'][$i]->drug;
+                for ($j = 0; $j < sizeof($entry['batches'][$i]['drug']); $j++) {
+                    $entry['batches'][$i]['drug']['dci'] = $entry['batches'][$i]['drug']->dci;
+                    $entry['batches'][$i]['drug']['category'] = $entry['batches'][$i]['drug']->category;
+                }
             }
 
             $data[] = $entry;

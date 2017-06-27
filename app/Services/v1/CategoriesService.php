@@ -8,20 +8,17 @@ use Illuminate\Support\Str;
 class CategoriesService {
 
     public function getCategories($parameters) {
-        if (isset($parameters) && !empty($parameters)) {
-            if (isset($parameters['name'])) {
+        if (isset($parameters) && !empty($parameters) && isset($parameters['name'])) {
+            $categories = Category::all();
+            $categoriesSearch = new \Illuminate\Database\Eloquent\Collection();
 
-                $categories = Category::all();
-                $categoriesSearch = new \Illuminate\Database\Eloquent\Collection();
-
-                foreach($categories as $category)
-                {
-                    if(Str::contains(Str::lower($category->name), Str::lower($parameters['name']))) {
-                        $categoriesSearch->add($category);
-                    }
+            foreach($categories as $category)
+            {
+                if(Str::contains(Str::lower($category->name), Str::lower($parameters['name']))) {
+                    $categoriesSearch->add($category);
                 }
-                return $categoriesSearch;
             }
+            return $categoriesSearch;
         }
         return $this->filterCategories(Category::all());
     }

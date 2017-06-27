@@ -24,7 +24,7 @@ class BatchServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(BatchesService::class, function($app) {
+        $this->app->bind(BatchesService::class, function() {
             return new BatchesService();
         });
     }

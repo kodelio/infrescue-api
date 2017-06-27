@@ -8,20 +8,17 @@ use Illuminate\Support\Str;
 class DcisService {
 
     public function getDcis($parameters) {
-        if (isset($parameters) && !empty($parameters)) {
-            if (isset($parameters['name'])) {
+        if (isset($parameters) && !empty($parameters) && isset($parameters['name'])) {
+            $dcis = Dci::all();
+            $dcisSearch = new \Illuminate\Database\Eloquent\Collection();
 
-                $dcis = Dci::all();
-                $dcisSearch = new \Illuminate\Database\Eloquent\Collection();
-
-                foreach($dcis as $dci)
-                {
-                    if(Str::contains(Str::lower($dci->name), Str::lower($parameters['name']))) {
-                        $dcisSearch->add($dci);
-                    }
+            foreach($dcis as $dci)
+            {
+                if(Str::contains(Str::lower($dci->name), Str::lower($parameters['name']))) {
+                    $dcisSearch->add($dci);
                 }
-                return $dcisSearch;
             }
+            return $dcisSearch;
         }
         return $this->filterDcis(Dci::all());
     }
