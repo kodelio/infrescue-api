@@ -30,6 +30,7 @@ class BoxesService {
         $data = [];
 
         foreach ($boxes as $box) {
+
             $entry = [
                 'id' => $box->id,
                 'name' => $box->name,
@@ -40,9 +41,12 @@ class BoxesService {
                 'href' => route('boxes.show', ['id' => $box->id])
             ];
 
+            for ($i = 0; $i < sizeof($entry['batches']); $i++) {
+                $entry['batches'][$i]['drug'] = $entry['batches'][$i]->drug;
+            }
+
             $data[] = $entry;
         }
-
         return $data;
     }
 

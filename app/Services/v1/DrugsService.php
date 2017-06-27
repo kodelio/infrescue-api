@@ -38,6 +38,7 @@ class DrugsService {
                 'dci' => $drug->dci->where('id', $drug->dci_id)->first(),
                 'category' => $drug->category->where('id', $drug->category_id)->first(),
                 'batches' => $drug->batches,
+                'img' => $drug->img,
                 'created_at' => $drug->created_at->format('Y-m-d H:i:s'),
                 'updated_at' => $drug->updated_at->format('Y-m-d H:i:s'),
                 'href' => route('drugs.show', ['id' => $drug->id])
@@ -60,6 +61,7 @@ class DrugsService {
         $drug->name = $req->input('name');
         $drug->dci_id = $req->input('dci_id');
         $drug->category_id = $req->input('category_id');
+        $drug->img = $req->input('img');
 
         $drug->save();
 
@@ -80,6 +82,10 @@ class DrugsService {
 
         if ($req->input('category_id') != null) {
             $drug->category_id = $req->input('category_id');
+        }
+
+        if ($req->input('img') != null) {
+            $drug->img = $req->input('img');
         }
 
         $drug->save();
