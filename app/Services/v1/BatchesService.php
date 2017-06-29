@@ -21,7 +21,7 @@ class BatchesService {
                 'id' => $batch->id,
                 'dosage' => $batch->dosage,
                 'DLU' => $batch->DLU,
-                'drug' => $batch->drug->where('id', $batch->drug_id)->first(),
+                'drug' => $batch->drug->with('dci','category')->where('id', $batch->drug_id)->first(),
                 'box' => $batch->box->where('id', $batch->box_id)->first(),
                 'orders' => $batch->orders,
                 'quantity' => $batch->quantity,
