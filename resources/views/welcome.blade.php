@@ -17,28 +17,14 @@
 <div class="main">
     <header>
         <div class="wrap">
-            <img src="{{ asset('/homepage/upload/iphone.png', env('REDIRECT_HTTPS')) }}" height="532" width="252" alt="" class="header-img">
+            <img src="{{ asset('/homepage/upload/screenApp.png', env('REDIRECT_HTTPS')) }}" style="width: 550px;" height="532" width="252" alt="" class="header-img">
             <div class="header-wrapper">
                 <h1 style="color: black;"><span>Inf</span>Rescue</h1>
                 <p style="color: black; font-size: 28px;    ">Gestion d'hopitaux de campagne</p>
                 <div class="buttons-wrapper">
                     <a href="#" class="button" target="_blank">Télécharger l'application</a>
-                    <a style="color: black;" href="http://sonar.infrescue.cf" class="button button-stripe" target="_blank">SonarQube</a>
-                    @if (Auth::guest())
-                        <br />
-                        <a style="margin-top: 15px; background: #2ecc71; border: 2px solid white;" href="{{ route('login') }}" class="button">Se connecter</a>
-                    @else
-                        <br />
-                        <a style="margin-top: 15px; background: #e74c3c; border: 2px solid white;" class="button" href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
-                            Se déconnecter
-                        </a>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
-                        </form>
-                    @endif
+                    <a style="color: black; margin-left: 0px; margin-top: 10px;" href="http://sonar.infrescue.cf" class="button button-stripe" target="_blank">SonarQube</a>
+                    <a style="color: black; margin-left: 0px; margin-top: 10px;" href="https://gitlab.com/InfRescue" class="button button-stripe" target="_blank">GitLab</a>
                 </div>
             </div>
             <!-- /.header-wrapper -->
