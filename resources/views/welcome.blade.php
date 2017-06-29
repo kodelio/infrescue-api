@@ -39,7 +39,7 @@
                     <h1>Projet GL INFRES 9</h1>
                     <br />
                     <p>Projet réalisé pour le module Projet GL de la formation INFRES (Ecole des Mines d'Alès)
-                    <img src="{{ asset('/homepage/images/infrescue.png', env('REDIRECT_HTTPS')) }}" style="width: 45%;"/>
+                    <img src="{{ asset('/homepage/images/Logo_InfRescue.svg', env('REDIRECT_HTTPS')) }}" style="width: 45%; margin-top: 25px;"/>
                     </p>
                 </div>
             </div>
