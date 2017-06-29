@@ -67,6 +67,24 @@ Route::get('/v1/categories/{category}/drugs', function ($categoryId) {
     return response()->json($data->drugs, 200);
 });
 
+Route::get('/v1/batch/{batch}', function ($batchId) {
+    $batch = App\Batch::where('id', $batchId)->first();
+    $data = [
+        'id' => $batch->id,
+        'dosage' => $batch->dosage,
+        'DLU' => $batch->DLU,
+        'drug' => $batch->drug->with('dci','category')->where('id', $batch->drug_id)->first(),
+        'box' => $batch->box->where('id', $batch->box_id)->first(),
+        'orders' => $batch->orders,
+        'quantity' => $batch->quantity,
+        'dotationU7' => $batch->dotationU7,
+        'created_at' => $batch->created_at->format('Y-m-d H:i:s'),
+        'updated_at' => $batch->updated_at->format('Y-m-d H:i:s'),
+        'href' => route('batches.show', ['id' => $batch->id])
+    ];
+    return response()->json($data, 200);
+});
+
 Route::post('/v1/users/login', function () {
     try {
         $data = App\User::where('email', request()->input('email'))->firstOrFail();
