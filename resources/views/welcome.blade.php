@@ -22,7 +22,7 @@
                 <h1 style="color: black;"><span>Inf</span>Rescue</h1>
                 <p style="color: black; font-size: 28px;    ">Gestion d'hopitaux de campagne</p>
                 <div class="buttons-wrapper">
-                    <a href="#" class="button" target="_blank">Télécharger l'application</a>
+                    <a href="/homepage/upload/infrescue.apk" class="button" target="_blank">Télécharger l'application</a>
                     <a style="color: black; margin-left: 0px; margin-top: 10px;" href="http://sonar.infrescue.cf" class="button button-stripe" target="_blank">SonarQube</a>
                     <a style="color: black; margin-left: 0px; margin-top: 10px;" href="https://gitlab.com/InfRescue" class="button button-stripe" target="_blank">GitLab</a>
                 </div>
