@@ -12,6 +12,7 @@ Documentation :
 - [Users API](https://github.com/kokno/infrescue-api/wiki/users-api)
 - [Orders API](https://github.com/kokno/infrescue-api/wiki/orders-api)
 
+---------------
 
 - [Android app](https://gitlab.com/InfRescue/Android)
 - [Web app](https://gitlab.com/InfRescue/Web)
